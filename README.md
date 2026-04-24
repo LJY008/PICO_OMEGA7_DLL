@@ -6,7 +6,6 @@
 
 本项目在原版基础上新增了：
 - **ODE（Open Dynamics Engine）物理引擎**集成，支持刚体动力学仿真；
-- 更多触觉设备型号的适配（共 23+ 款）；
 - 触觉时钟（PrecisionClock）、仿真控制（Simulation）等扩展模块；
 - 针对工程实际场景的接口调整与优化。
 
@@ -108,13 +107,16 @@ CHAI3D 库  (触觉渲染 + 3D 图形)
 
 ### 触觉设备（HapticDevice）
 
-支持 23+ 款触觉设备型号，包括：
+设备支持能力来源于底层 CHAI3D 库（版本 3.3.0）。CHAI3D 的 `cHapticDeviceModel` 枚举共定义 **25 个设备标识**（含 Virtual 虚拟设备和 Custom 自定义接口），涵盖以下硬件型号：
 
 | 系列 | 型号 |
 |------|------|
-| Phantom | Touch、Omni、Desktop、15/30 DOF |
-| CHAI3D | Delta 3/6、Omega 3/6/7、Sigma 6P/7 |
-| 其他 | Falcon、Sixense、Leap Motion、XTH-1/2、KSD-1、VIC-1 |
+| Phantom（3D Systems） | Touch、Omni、Desktop、15-6DOF、30-6DOF、Other |
+| Delta（Force Dimension） | Delta 3、Delta 6 |
+| Omega（Force Dimension） | Omega 3、Omega 6L/6R、Omega 7L/7R |
+| Sigma（Force Dimension） | Sigma 6L/6R、Sigma 7L/7R |
+| Lambda（Force Dimension） | Lambda 7L/7R |
+| 其他 | Falcon（Novint）、MPR、Sixense（追踪器）、Leap Motion（追踪器） |
 
 ### 触觉材质（HapticMaterial）
 
